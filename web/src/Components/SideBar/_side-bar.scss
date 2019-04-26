@@ -1,0 +1,21 @@
+@import '../../styles/colors';
+
+$secondary-width: 75px;
+$primary-width: 200px;
+
+.side-bar {
+  height: 100%;
+  display: flex;
+  
+  &--secondary {
+    background: $secondary;
+    width: $secondary-width;
+    height: 100%;
+  }
+
+  &--primary {
+    background: $primary;
+    width: $primary-width;
+    height: 100%;
+  }
+}
