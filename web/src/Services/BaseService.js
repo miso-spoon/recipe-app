@@ -7,8 +7,8 @@ export class BaseService {
     this.route = route;
   }
 
-  async getAll() {
-    let res = await axios.get(this.route);
+  async get(params) {
+    let res = await axios.get(this.route, params);
     return res.data;
   }
 
@@ -17,8 +17,8 @@ export class BaseService {
     return res.data;
   }
 
-  async create(options) {
-    let res = await axios.post(this.route + "/create", options);
+  async create(params) {
+    let res = await axios.post(this.route + "/create", params);
     return res.data.model;
   }
 }
