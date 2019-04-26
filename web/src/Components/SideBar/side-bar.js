@@ -14,7 +14,13 @@ class SideBar extends Component {
           </div>
         </div>
         <div className="side-bar--primary">
-          <div className="side-bar--primary-header" />
+          <div className="side-bar--primary-header">
+            {/* PLACEHOLDER SEARCH */}
+            <div className="side-bar--primary-search">
+              <input type="text" className="side-bar--primary-search-input" />
+              <i className="material-icons">search</i>
+            </div>
+          </div>
           <div className="side-bar--primary-content">
             {/* FIND RECIPES*/}
             <span className="side-bar--primary-menu-item">

@@ -45,8 +45,36 @@ $primary-width: 200px;
 
     &-header {
       flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       min-height: 120px;
       max-height: 40px;
+    }
+
+    &-search {
+      display: flex;
+      align-items: center;
+      background: white;
+      width: 165px;
+      height: 34px;
+      border-radius: 100px;
+
+      &-input {
+        width: 120px;
+        font-size: 14px;
+        margin: 0 0 0 12px;
+        border: none;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      i {
+        color: $gray-2;
+        margin: 0 12px 0 auto;
+      }
     }
 
     &-content {
