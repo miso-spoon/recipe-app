@@ -1,6 +1,6 @@
 @import '../../styles/colors';
 
-$secondary-width: 75px;
+$secondary-width: 65px;
 $primary-width: 200px;
 
 .side-bar {
@@ -8,14 +8,74 @@ $primary-width: 200px;
   display: flex;
   
   &--secondary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background: $secondary;
     width: $secondary-width;
     height: 100%;
+
+    &-settings {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto 0 12px 0;
+      color: $primary-light;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      cursor: pointer;
+      user-select: none;
+
+      &:hover {
+        background: $primary;
+      }
+      
+      i {
+        margin: 12px;
+        font-size: 24px;
+      }
+    }
   }
 
   &--primary {
     background: $primary;
     width: $primary-width;
     height: 100%;
+
+    &-header {
+      flex: 1;
+      min-height: 120px;
+      max-height: 40px;
+    }
+
+    &-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &-menu-item {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      color: $primary-light;
+      font-weight: 500;
+      font-size: 14px;
+      text-transform: lowercase;
+      cursor: pointer;
+      user-select: none;
+
+      &:hover {
+        background: lighten($secondary, 10%);
+      }
+
+      i {
+        font-weight: 100;
+        font-size: 24px;
+        margin: 8px 18px 8px 14px;
+      }
+    }
   }
 }
