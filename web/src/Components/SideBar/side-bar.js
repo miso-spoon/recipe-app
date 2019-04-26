@@ -24,15 +24,24 @@ class SideBar extends Component {
           <div className="side-bar--primary-content">
             {/* FIND RECIPES*/}
             <span className="side-bar--primary-menu-item">
-              <i className="material-icons-round">dashboard</i> Find Recipes
+              <i className="material-icons-round">dashboard</i>
+              <span className="side-bar--primary-menu-item-label">
+                Find Recipes
+              </span>
             </span>
             {/* MY RECIPES*/}
             <span className="side-bar--primary-menu-item">
-              <i className="material-icons">style</i> My Recipes
+              <i className="material-icons">style</i>
+              <span className="side-bar--primary-menu-item-label">
+                My Recipes
+              </span>
             </span>
             {/* FAVORITES*/}
             <span className="side-bar--primary-menu-item">
-              <i className="material-icons">favorite</i> Favorites
+              <i className="material-icons">favorite</i>
+              <span className="side-bar--primary-menu-item-label">
+                Favorites
+              </span>
             </span>
           </div>
         </div>
