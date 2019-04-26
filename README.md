@@ -2,7 +2,7 @@
 
 This is a fullstack web app to be used to create and view food recipes!
 
-![alt text](https://raw.githubusercontent.com/miso-spoon/recipe-app/dev/web/preview.png)
+![alt text](https://raw.githubusercontent.com/miso-spoon/recipe-app/dev/preview.png)
 
 ## Getting Started
 
