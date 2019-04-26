@@ -11,7 +11,7 @@ class RecipeListView extends Component {
   render() {
     return (
       <div className="recipe-list-view">
-        <Header />
+        {/* <Header /> */}
         <div className="recipe-list-view--container">
           <div className="recipe-list-view--placeholder">Hello World.</div>
         </div>
