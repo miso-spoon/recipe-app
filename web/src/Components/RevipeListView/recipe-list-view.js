@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 
 /* Components */
 import Header from "../Header/header";
+import RecipeCard from "../RecipeCard/recipe-card";
 
 /* Styles */
 import "./_recipe-list-view.scss";
@@ -13,7 +14,12 @@ class RecipeListView extends Component {
       <div className="recipe-list-view">
         <Header />
         <div className="recipe-list-view--container">
-          <div className="recipe-list-view--placeholder">Hello World.</div>
+          <RecipeCard title={"Smoked Salmon and Rice"}/>
+          <RecipeCard title={"Macaroni and Cheese"}/>
+          <RecipeCard title={"Peanut Butter and Jelly Sandwich"}/>
+          <RecipeCard title={"Chicken Pot Pie"}/>
+          <RecipeCard title={"Vegitable Stir Fry"}/>
+          <RecipeCard title={"Beef Stew"}/>
         </div>
       </div>
     );

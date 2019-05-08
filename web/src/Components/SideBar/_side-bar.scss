@@ -1,11 +1,16 @@
 @import '../../styles/colors';
+@import '../../styles/responsive';
 
-$secondary-width: 65px;
-$primary-width: 200px;
+$secondary-width: 50px;
+$primary-width: 180px;
 
 .side-bar {
   height: 100%;
-  display: flex;
+  display: none;
+  
+  @include respond-to(gt-sm) {
+    display: flex;
+  }
   
   &--secondary {
     display: flex;
@@ -94,6 +99,7 @@ $primary-width: 200px;
       text-transform: lowercase;
       cursor: pointer;
       user-select: none;
+      color: #f5deb3;
 
       &:hover {
         background: lighten($secondary, 10%);
@@ -103,6 +109,18 @@ $primary-width: 200px;
         font-weight: 100;
         font-size: 24px;
         margin: 8px 18px 8px 14px;
+
+        
+      }
+      &:nth-of-type(2) {
+        color: $yellow;
+      }
+      &:nth-child(3) {
+        color: $pink;
+      }
+
+      &-label {
+        color: $white;
       }
     }
   }

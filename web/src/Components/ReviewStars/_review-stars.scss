@@ -1,0 +1,12 @@
+@import '../../styles/colors';
+
+.review-stars {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &--number {
+    color: $gray-2;
+    margin-left: 4px;
+  }
+}

@@ -10,12 +10,10 @@
     flex: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 0 0px 20px 0px;
     background: $gray-1;
-  }
-
-  &--placeholder {
-    font-size: 32px;
-    color: $gray-2;
+    overflow: auto;
   }
 }
