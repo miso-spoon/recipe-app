@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from 'react-router-dom'
 
 /* Styles */
 import "./_side-bar.scss";
@@ -23,19 +24,19 @@ class SideBar extends Component {
           </div>
           <div className="side-bar--primary-content">
             {/* FIND RECIPES*/}
-            <span className="side-bar--primary-menu-item">
+            <Link to="/recipes" className="side-bar--primary-menu-item">
               <i className="material-icons-round">dashboard</i>
               <span className="side-bar--primary-menu-item-label">
                 Find Recipes
               </span>
-            </span>
+            </Link>
             {/* MY RECIPES*/}
-            <span className="side-bar--primary-menu-item">
+            <Link to="/userId/recipes" className="side-bar--primary-menu-item">
               <i className="material-icons">style</i>
               <span className="side-bar--primary-menu-item-label">
                 My Recipes
               </span>
-            </span>
+            </Link>
             {/* FAVORITES*/}
             <span className="side-bar--primary-menu-item">
               <i className="material-icons">favorite</i>

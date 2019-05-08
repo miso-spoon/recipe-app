@@ -3,18 +3,11 @@
 .recipe-list-view {
   flex: 1;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 0 0px 20px 0px;
   background: $gray-1;
-
-  &--container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    padding: 0 0px 20px 0px;
-    background: $gray-1;
-    overflow-y: auto;
-    overflow-x: hidden;
-  }
+  overflow-y: auto;
+  overflow-x: hidden;
 }

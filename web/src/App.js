@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { withCookies } from "react-cookie";
 
 /* Components */
+import Header from "./Components/Header/header";
 import RecipeListView from "./Components/RevipeListView/recipe-list-view";
 import SideBar from "./Components/SideBar/side-bar";
 
@@ -18,11 +19,18 @@ class AppComponent extends Component {
           path="/"
           render={() => <SideBar cookies={this.props.cookies} />}
         />
-        <Route
-          excact
-          path="/"
-          render={() => <RecipeListView cookies={this.props.cookies} />}
-        />
+        <div className="content">
+          <Route
+            path="/"
+            render={() => <Header cookies={this.props.cookies} />}
+          />
+          <Route
+            excact
+            path="/recipes"
+            render={() => <RecipeListView cookies={this.props.cookies} />}
+          />
+        </div>
+
       </div>
     );
   }
