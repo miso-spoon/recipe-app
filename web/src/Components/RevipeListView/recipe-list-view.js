@@ -14,12 +14,12 @@ class RecipeListView extends Component {
       <div className="recipe-list-view">
         <Header />
         <div className="recipe-list-view--container">
-          <RecipeCard />
-          <RecipeCard />
-          <RecipeCard />
-          <RecipeCard />
-          <RecipeCard />
-          <RecipeCard />
+          <RecipeCard title={"Smoked Salmon and Rice"}/>
+          <RecipeCard title={"Macaroni and Cheese"}/>
+          <RecipeCard title={"Peanut Butter and Jelly Sandwich"}/>
+          <RecipeCard title={"Chicken Pot Pie"}/>
+          <RecipeCard title={"Vegitable Stir Fry"}/>
+          <RecipeCard title={"Beef Stew"}/>
         </div>
       </div>
     );

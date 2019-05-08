@@ -1,11 +1,16 @@
 @import '../../styles/colors';
+@import '../../styles/responsive';
 
 $secondary-width: 50px;
 $primary-width: 180px;
 
 .side-bar {
   height: 100%;
-  display: flex;
+  display: none;
+  
+  @include respond-to(gt-sm) {
+    display: flex;
+  }
   
   &--secondary {
     display: flex;
