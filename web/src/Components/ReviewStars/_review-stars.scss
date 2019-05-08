@@ -3,10 +3,19 @@
 .review-stars {
   display: flex;
   align-items: center;
-  cursor: pointer;
 
   &--number {
     color: $gray-2;
     margin-left: 4px;
+  }
+
+  .star {
+    color: $yellow-2;
+    cursor: pointer;
+  }
+  .star-filled {
+    fill: $yellow-2;
+    max-height: 24px;
+    cursor: pointer;
   }
 }

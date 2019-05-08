@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 /* Components */
-import Star from "../../star.svg"; // TODO: Material icons round star is broken
+import Star from "../StarFilled/star-filled"; // TODO: Material icons round star is broken
 
 /* Styles */
 import "./_review-stars.scss";
@@ -29,6 +29,16 @@ class ReviewStars extends Component {
   };
 
   /**
+   * Hadle onMouseLeave. Turn off editing.
+   *
+   * @param Object - event object
+   */
+  onLeave = () => {
+    this.setState({ canUpdate: false });
+  };
+
+
+  /**
    * Handle onMouseDown. Toggle on/off rating actions
    *
    * @param Object - event object
@@ -52,10 +62,9 @@ class ReviewStars extends Component {
     // Add all full stars
     while (rating >= 1) {
       stars.push(
-        <img // TODO: Update to <i> with fix to Material icon being broken
+        <Star // TODO: Update to <i> with fix to Material icon being broken
           key={index}
           id={index}
-          src={Star}
           onMouseEnter={this.onHover}
           onMouseDown={this.onClick}
         />
@@ -70,7 +79,7 @@ class ReviewStars extends Component {
         <i
           key={index}
           id={index}
-          className="material-icons-round"
+          className="material-icons-round star"
           onMouseEnter={this.onHover}
           onMouseDown={this.onClick}
         >
@@ -86,7 +95,7 @@ class ReviewStars extends Component {
         <i
           key={index}
           id={index}
-          className="material-icons-round"
+          className="material-icons-round star"
           onMouseEnter={this.onHover}
           onMouseDown={this.onClick}
         >
@@ -101,7 +110,7 @@ class ReviewStars extends Component {
 
   render() {
     return (
-      <div className="review-stars">
+      <div className="review-stars no-select" onMouseLeave={this.onLeave}>
         {this.getStars(this.state.rating)}
         <span className="review-stars--number">{this.state.ratings}</span>
       </div>
