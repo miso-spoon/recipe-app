@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 
 /* Components */
 import Star from "../StarFilled/star-filled"; // TODO: Material icons round star is broken
@@ -13,7 +12,7 @@ class ReviewStars extends Component {
     this.state = {
       canUpdate: false,
       rating: this.props.rating || 0,
-      ratings: 234
+      ratings: this.props.ratings || null
     };
   }
 
@@ -110,13 +109,4 @@ class ReviewStars extends Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    state: state
-  };
-};
-
-export default connect(
-  mapStateToProps,
-  null
-)(ReviewStars);
+export default ReviewStars;

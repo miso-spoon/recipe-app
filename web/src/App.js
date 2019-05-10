@@ -17,12 +17,12 @@ class AppComponent extends Component {
       <div className="app">
         <Route
           path="/"
-          render={() => <SideBar cookies={this.props.cookies} />}
+          render={() => <Header cookies={this.props.cookies} />}
         />
         <div className="content">
           <Route
             path="/"
-            render={() => <Header cookies={this.props.cookies} />}
+            render={() => <SideBar cookies={this.props.cookies} />}
           />
           <Route
             excact
@@ -30,7 +30,6 @@ class AppComponent extends Component {
             render={() => <RecipeListView cookies={this.props.cookies} />}
           />
         </div>
-
       </div>
     );
   }

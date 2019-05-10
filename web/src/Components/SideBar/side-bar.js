@@ -1,17 +1,71 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link } from 'react-router-dom'
+
+/* Components */
+import CheckBox from "../Inputs/CheckBox/check-box";
+import ReviewStars from "../ReviewStars/review-stars";
 
 /* Styles */
 import "./_side-bar.scss";
 
 class SideBar extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      filters: [
+        {
+          type: "Category",
+          filters: ["pasta", "sanwiches", "soups", "rice"]
+        },
+        {
+          type: "Restriction",
+          filters: ["vegetarian", "vegan", "gluten free"]
+        }
+      ]
+    };
+  }
+
+  /**
+   * Handles changes in filters
+   *
+   * @param {Object} event - event object
+   */
+  onFilterChange(event) {}
+
+  /**
+   * Returns the list of filters
+   */
+  getFilters = () => {
+    let filters = this.state.filters.map(filter => {
+      let boxes = filter.filters.map(f => {
+        return <CheckBox key={f} onChange={this.onFilterChange} filter={f} />;
+      });
+      return (
+        <div
+          key={filter.type + "-container"}
+          className="side-bar--filter-group"
+        >
+          <div
+            key={filter.type + "-header"}
+            className="side-bar--filter-group-header"
+          >
+            {filter.type}
+          </div>
+          {boxes}
+        </div>
+      );
+    });
+
+    return filters;
+  };
+
   render() {
     return (
       <div className="side-bar">
         <div className="side-bar--secondary">
-          <div className="side-bar--secondary-settings">
-            <i className="material-icons">settings</i>
+          <div className="side-bar--secondary-close">
+            <i className="material-icons-round">close</i>
           </div>
         </div>
         <div className="side-bar--primary">
@@ -23,27 +77,11 @@ class SideBar extends Component {
             </div>
           </div>
           <div className="side-bar--primary-content">
-            {/* FIND RECIPES*/}
-            <Link to="/recipes" className="side-bar--primary-menu-item">
-              <i className="material-icons-round">dashboard</i>
-              <span className="side-bar--primary-menu-item-label">
-                Find Recipes
-              </span>
-            </Link>
-            {/* MY RECIPES*/}
-            <Link to="/userId/recipes" className="side-bar--primary-menu-item">
-              <i className="material-icons">style</i>
-              <span className="side-bar--primary-menu-item-label">
-                My Recipes
-              </span>
-            </Link>
-            {/* FAVORITES*/}
-            <span className="side-bar--primary-menu-item">
-              <i className="material-icons">favorite</i>
-              <span className="side-bar--primary-menu-item-label">
-                Favorites
-              </span>
-            </span>
+            <div className="side-bar--filter-group">{this.getFilters()}</div>
+            <div className="side-bar--filter-group">
+              <div className="side-bar--filter-group-header">Rating</div>
+              <ReviewStars rating={0} />
+            </div>
           </div>
         </div>
       </div>
