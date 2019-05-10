@@ -61,6 +61,7 @@ class ReviewStars extends Component {
     while (index < 5) {
       let fullStar = (
         <Star // TODO: Update to <i> with fix to Material icon being broken
+          key={index}
           id={index}
           onMouseEnter={this.onHover}
           onMouseDown={this.onClick}
@@ -68,6 +69,7 @@ class ReviewStars extends Component {
       );
       let halfStar = (
         <i
+          key={index}
           id={index}
           className="material-icons-round star"
           onMouseEnter={this.onHover}
@@ -78,6 +80,7 @@ class ReviewStars extends Component {
       );
       let emptyStar = (
         <i
+          key={index}
           id={index}
           className="material-icons-round star"
           onMouseEnter={this.onHover}
