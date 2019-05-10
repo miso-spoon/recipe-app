@@ -37,7 +37,6 @@ class ReviewStars extends Component {
     this.setState({ canUpdate: false });
   };
 
-
   /**
    * Handle onMouseDown. Toggle on/off rating actions
    *
@@ -59,25 +58,16 @@ class ReviewStars extends Component {
     let stars = [];
     let index = 0;
 
-    // Add all full stars
-    while (rating >= 1) {
-      stars.push(
+    while (index < 5) {
+      let fullStar = (
         <Star // TODO: Update to <i> with fix to Material icon being broken
-          key={index}
           id={index}
           onMouseEnter={this.onHover}
           onMouseDown={this.onClick}
         />
       );
-      rating--;
-      index++;
-    }
-
-    // Add half star
-    if (rating > 0) {
-      stars.push(
+      let halfStar = (
         <i
-          key={index}
           id={index}
           className="material-icons-round star"
           onMouseEnter={this.onHover}
@@ -86,14 +76,8 @@ class ReviewStars extends Component {
           star_half
         </i>
       );
-      index++;
-    }
-
-    // Add empty stars
-    while (index < 5) {
-      stars.push(
+      let emptyStar = (
         <i
-          key={index}
           id={index}
           className="material-icons-round star"
           onMouseEnter={this.onHover}
@@ -102,6 +86,11 @@ class ReviewStars extends Component {
           star_border
         </i>
       );
+
+      if (rating >= 1) stars.push(fullStar);
+      else if (rating > 0) stars.push(halfStar);
+      else if (rating <= 0 && index < 5) stars.push(emptyStar);
+      rating--;
       index++;
     }
 
