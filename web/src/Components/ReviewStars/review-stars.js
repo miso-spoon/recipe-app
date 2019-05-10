@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 
 /* Components */
-import Star from "../../star.svg"; // TODO: Material icons round star is broken
+import Star from "../StarFilled/star-filled"; // TODO: Material icons round star is broken
 
 /* Styles */
 import "./_review-stars.scss";
@@ -13,7 +12,7 @@ class ReviewStars extends Component {
     this.state = {
       canUpdate: false,
       rating: this.props.rating || 0,
-      ratings: 234
+      ratings: this.props.ratings || null
     };
   }
 
@@ -26,6 +25,15 @@ class ReviewStars extends Component {
   onHover = e => {
     if (!this.state.canUpdate) return;
     this.setState({ rating: parseInt(e.target.id) + 1 });
+  };
+
+  /**
+   * Hadle onMouseLeave. Turn off editing.
+   *
+   * @param Object - event object
+   */
+  onLeave = () => {
+    this.setState({ canUpdate: false });
   };
 
   /**
@@ -49,50 +57,42 @@ class ReviewStars extends Component {
     let stars = [];
     let index = 0;
 
-    // Add all full stars
-    while (rating >= 1) {
-      stars.push(
-        <img // TODO: Update to <i> with fix to Material icon being broken
+    while (index < 5) {
+      let fullStar = (
+        <Star // TODO: Update to <i> with fix to Material icon being broken
           key={index}
           id={index}
-          src={Star}
           onMouseEnter={this.onHover}
           onMouseDown={this.onClick}
         />
       );
-      rating--;
-      index++;
-    }
-
-    // Add half star
-    if (rating > 0) {
-      stars.push(
+      let halfStar = (
         <i
           key={index}
           id={index}
-          className="material-icons-round"
+          className="material-icons-round star"
           onMouseEnter={this.onHover}
           onMouseDown={this.onClick}
         >
           star_half
         </i>
       );
-      index++;
-    }
-
-    // Add empty stars
-    while (index < 5) {
-      stars.push(
+      let emptyStar = (
         <i
           key={index}
           id={index}
-          className="material-icons-round"
+          className="material-icons-round star"
           onMouseEnter={this.onHover}
           onMouseDown={this.onClick}
         >
           star_border
         </i>
       );
+
+      if (rating >= 1) stars.push(fullStar);
+      else if (rating > 0) stars.push(halfStar);
+      else if (rating <= 0 && index < 5) stars.push(emptyStar);
+      rating--;
       index++;
     }
 
@@ -101,7 +101,7 @@ class ReviewStars extends Component {
 
   render() {
     return (
-      <div className="review-stars">
+      <div className="review-stars no-select" onMouseLeave={this.onLeave}>
         {this.getStars(this.state.rating)}
         <span className="review-stars--number">{this.state.ratings}</span>
       </div>
@@ -109,13 +109,4 @@ class ReviewStars extends Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    state: state
-  };
-};
-
-export default connect(
-  mapStateToProps,
-  null
-)(ReviewStars);
+export default ReviewStars;

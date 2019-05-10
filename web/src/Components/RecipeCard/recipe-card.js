@@ -19,7 +19,7 @@ class RecipeCard extends Component {
         <div className="recipe-card--detail-container">
           <div className="recipe-card--title">{this.props.title}</div>
           <div className="recipe-card--review-container">
-            <ReviewStars rating={4.5} />
+            <ReviewStars rating={4.5} ratings={234} />
           </div>
           <div className="recipe-card--time-container">
             <i className="material-icons recipe-card--icon">access_time</i>
