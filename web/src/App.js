@@ -26,7 +26,7 @@ class AppComponent extends Component {
           />
           <Route
             excact
-            path="/recipes"
+            path="/"
             render={() => <RecipeListView cookies={this.props.cookies} />}
           />
         </div>
