@@ -1,11 +1,28 @@
 @import '../../styles/colors';
 
 .header {
-  width: 100%;
   height: 55px;
   min-height: 55px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  padding: 0 24px;
   align-items: center;
   background: $primary;
+
+  &--link {
+    height: 28px;
+    width: 256px;
+    background: lighten($primary, 25%);
+    border-radius: 2px;
+    margin: 0 16px;
+  }
+
+  &--icon {
+    background: lighten($primary, 25%);
+    border-radius: 50%;
+    font-size: 32px;
+    width: 32px;
+    height: 32px;
+    margin: 0 16px;
+  }
 }

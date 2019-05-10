@@ -8,7 +8,8 @@ class Header extends Component {
   render() {
     return (
       <div className="header">
-        <div className="header--primary" />
+        <div className="header--link" />
+        <div className="header--icon" />
       </div>
     );
   }
