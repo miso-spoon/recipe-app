@@ -7,91 +7,55 @@ $primary-width: 180px;
 .side-bar {
   height: 100%;
   display: none;
-  
+  background: $gray-3;
+  border-right: 1px solid $gray-4;
+  width: $primary-width;
+
   @include respond-to(gt-sm) {
     display: flex;
     flex-direction: column;
   }
-  
-  &--secondary {
+
+  &-header {
     display: flex;
-    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    background: $primary;
-    height: 40px;
+  }
 
-    &-close {
-      display: flex;
-      flex: 1;
-      justify-content: flex-end;
-      align-items: center;
-      margin: auto 0 12px 0;
-      color: $primary-light;
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      cursor: pointer;
-      user-select: none;
+  &-search {
+    display: flex;
+    align-items: center;
+    background: $gray-4;
+    width: 145px;
+    height: 34px;
+    border-radius: 100px;
+    margin: 24px auto 0 auto;
+    font-size: 18px;
 
-      &:hover {
-        background: $primary;
+    &-input {
+      width: 100px;
+      font-size: 14px;
+      margin: 0 0 0 12px;
+      border: none;
+      background: $gray-4;
+
+      &:focus {
+        outline: none;
       }
-      
-      i {
-        margin: 12px;
-        font-size: 24px;
-      }
+    }
+
+    i {
+      color: $gray-2;
+      margin: 0 12px 0 auto;
     }
   }
 
-  &--primary {
-    background: $gray-3;
-    border-right: 1px solid $gray-4;
-    width: $primary-width;
-    height: 100%;
-
-    &-header {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    &-search {
-      display: flex;
-      align-items: center;
-      background: $gray-4;
-      width: 145px;
-      height: 34px;
-      border-radius: 100px;
-      margin-top: 24px;
-      font-size: 18px;
-
-      &-input {
-        width: 100px;
-        font-size: 14px;
-        margin: 0 0 0 12px;
-        border: none;
-        background: $gray-4;
-
-        &:focus {
-          outline: none;
-        }
-      }
-
-      i {
-        color: $gray-2;
-        margin: 0 12px 0 auto;
-      }
-    }
-
-    &-content {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 12px;
-    }
+  &-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
   }
 
   &--filter-group {

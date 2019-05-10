@@ -63,25 +63,16 @@ class SideBar extends Component {
   render() {
     return (
       <div className="side-bar">
-        <div className="side-bar--secondary">
-          <div className="side-bar--secondary-close">
-            <i className="material-icons-round">close</i>
-          </div>
+        {/* PLACEHOLDER SEARCH */}
+        <div className="side-bar-search">
+          <input type="text" className="side-bar-search-input" />
+          <i className="material-icons">search</i>
         </div>
-        <div className="side-bar--primary">
-          <div className="side-bar--primary-header">
-            {/* PLACEHOLDER SEARCH */}
-            <div className="side-bar--primary-search">
-              <input type="text" className="side-bar--primary-search-input" />
-              <i className="material-icons">search</i>
-            </div>
-          </div>
-          <div className="side-bar--primary-content">
-            <div className="side-bar--filter-group">{this.getFilters()}</div>
-            <div className="side-bar--filter-group">
-              <div className="side-bar--filter-group-header">Rating</div>
-              <ReviewStars rating={0} />
-            </div>
+        <div className="side-bar-content">
+          <div className="side-bar--filter-group">{this.getFilters()}</div>
+          <div className="side-bar--filter-group">
+            <div className="side-bar--filter-group-header">Rating</div>
+            <ReviewStars rating={0} />
           </div>
         </div>
       </div>
