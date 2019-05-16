@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const RecipeRouter = require('./Recipe');
-const log = require('../utils/logging').logger;
+const handleError = require('../utils/utils').handleError;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -9,5 +9,6 @@ router.get('/', function(req, res, next) {
 });
 
 router.use('/recipes', RecipeRouter);
+router.use(handleError);
 
 module.exports = router;
