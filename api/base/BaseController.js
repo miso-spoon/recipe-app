@@ -41,7 +41,7 @@ class BaseController {
          return next(err);
       }
       let modelId = req.params.id;
-      this.Model.findOneAndDelete(modelId);
+      await this.Model.findOneAndDelete(modelId);
       res.status(204).end();
    }
 
@@ -53,9 +53,9 @@ class BaseController {
       }
       let body = req.body;
       let modelId = req.params.id;
-      let model = await this.Model.findOneAndUpdate(modelId, {
-         $set: body
-      });
+      let update = { $set: body };
+      let options = { new: true };
+      let model = await this.Model.findOneAndUpdate(modelId, update, options);
       res.send(model);
    }
 }

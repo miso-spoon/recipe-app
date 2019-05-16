@@ -7,6 +7,6 @@ router.get('/', function(req, res, next) {
    res.send('Hey, get outta here!');
 });
 
-router.use('/recipe', RecipeRouter);
+router.use('/recipes', RecipeRouter);
 
 module.exports = router;

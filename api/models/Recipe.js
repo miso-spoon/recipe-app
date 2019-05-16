@@ -1,7 +1,14 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-const recipeSchema = new mongoose.Schema({
-   title: String
-});
+let schemaOptions = {
+   versionKey: false
+};
+
+let recipeSchema = new mongoose.Schema(
+   {
+      title: { type: String, required: true }
+   },
+   schemaOptions
+);
 
 module.exports = mongoose.model('Recipe', recipeSchema);
