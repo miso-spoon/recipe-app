@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "prettier": "prettier --write routes/**/*.js utils/**/*.js models/**/*.js base/**/*.js"
+    "prettier": "prettier --write ./**/*.js ./*.js"
   },
   "repository": {
     "type": "git",

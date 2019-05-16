@@ -1,4 +1,4 @@
-var express = require("express");
+var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
@@ -9,16 +9,16 @@ mongoose.connect('mongodb://localhost:27017/recipeDev');
 
 // When successfully connected
 mongoose.connection.on('connected', () => {
-	console.log('Established Mongoose Default Connection');
+   console.log('Established Mongoose Default Connection');
 });
 
 // When connection throws an error
 mongoose.connection.on('error', err => {
-	console.log('Mongoose Default Connection Error : ' + err);
+   console.log('Mongoose Default Connection Error : ' + err);
 });
 
 app.listen(3000, () => {
-    console.log("Server running on port 3000");
+   console.log('Server running on port 3000');
 });
 
 app.use(express.json());
