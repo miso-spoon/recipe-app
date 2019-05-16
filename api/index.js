@@ -1,25 +1,42 @@
-var express = require('express');
-var app = express();
-var mongoose = require('mongoose');
-var bodyParser = require('body-parser');
+const express = require('express');
+const app = express();
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const morgan = require('morgan');
+const log = require('./utils/logging').logger;
 
-var routes = require('./routes');
+const routes = require('./routes');
 
-mongoose.connect('mongodb://localhost:27017/recipeDev');
+mongoose.connect('mongodb://localhost:27017/recipeDev', {
+   useNewUrlParser: true
+});
 
 // When successfully connected
 mongoose.connection.on('connected', () => {
-   console.log('Established Mongoose Default Connection');
+   log.info('Established Mongoose Default Connection');
 });
 
 // When connection throws an error
 mongoose.connection.on('error', err => {
-   console.log('Mongoose Default Connection Error : ' + err);
+   log.error('Mongoose Default Connection Error : ' + err);
 });
 
 app.listen(3000, () => {
-   console.log('Server running on port 3000');
+   log.info('Server running on port 3000');
 });
+
+let morganLogStyle =
+   ':method :url :status :response-time ms - :res[content-length]';
+
+app.use(
+   morgan(morganLogStyle, {
+      stream: {
+         write: str => {
+            log.info(str);
+         }
+      }
+   })
+);
 
 app.use(express.json());
 app.use(bodyParser.json());

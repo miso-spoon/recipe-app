@@ -1,6 +1,7 @@
-var express = require('express');
-var router = express.Router();
-var RecipeRouter = require('./Recipe');
+const express = require('express');
+const router = express.Router();
+const RecipeRouter = require('./Recipe');
+const log = require('../utils/logging').logger;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

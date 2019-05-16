@@ -1,5 +1,5 @@
-var BaseController = require('../../base/BaseController');
-var Recipe = require('../../models/Recipe');
+const BaseController = require('../../base/BaseController');
+const Recipe = require('../../models/Recipe');
 
 class RecipeController extends BaseController {
    constructor() {
