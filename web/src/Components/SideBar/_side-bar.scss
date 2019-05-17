@@ -2,7 +2,7 @@
 @import '../../styles/responsive';
 
 $secondary-width: 50px;
-$primary-width: 180px;
+$color-primary-width: 200px;
 
 .side-bar {
   position: absolute;
@@ -10,10 +10,10 @@ $primary-width: 180px;
   top: 0;
   display: flex;
   flex-direction: column;
-  margin-left: -181px;
-  background: $white;
-  border-right: 1px solid $gray-4;
-  width: $primary-width;
+  margin-left: -201px;
+  background: $color-white;
+  border-right: 1px solid $color-border;
+  width: $color-primary-width;
   transition: margin 400ms;
 
   @include respond-to(gt-sm) {
@@ -34,7 +34,7 @@ $primary-width: 180px;
   &-search {
     display: flex;
     align-items: center;
-    background: $gray-4;
+    background: $color-input;
     width: 145px;
     height: 34px;
     border-radius: 100px;
@@ -46,7 +46,7 @@ $primary-width: 180px;
       font-size: 14px;
       margin: 0 0 0 12px;
       border: none;
-      background: $gray-4;
+      background: $color-input;
 
       &:focus {
         outline: none;
@@ -54,7 +54,7 @@ $primary-width: 180px;
     }
 
     i {
-      color: $gray-2;
+      color: $color-gray-dark;
       margin: 0 12px 0 auto;
     }
   }
@@ -76,7 +76,7 @@ $primary-width: 180px;
     &-header {
       margin: 8px 0;
       font-weight: 600;
-      color: $gray-2;
+      color: $color-gray-dark;
       font-size: 14px;
     }
 
