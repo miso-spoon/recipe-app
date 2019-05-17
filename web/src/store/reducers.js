@@ -1,20 +1,11 @@
 import { combineReducers } from "redux";
 import * as Actions from "./actions";
 
-const accounts = (state = {}, action) => {
+const recipes = (state = [], action) => {
   switch (action.type) {
-    case Actions.ALL_ACCOUNTS_ACTION:
-      let accounts = action.payload;
-      return state.concat(accounts);
-    default:
-      return state;
-  }
-};
-
-const account = (state = {}, action) => {
-  switch (action.type) {
-    case Actions.ACCOUNT_ACTION:
-      return Object.assign({}, state, action.payload);
+    case Actions.UPDATE_RECIPES_ACTION:
+      let recipes = action.payload;
+      return state.concat(recipes);
     default:
       return state;
   }
@@ -28,7 +19,6 @@ const toast = (state = [], action) => {
 };
 
 export default combineReducers({
-  account,
-  accounts,
+  recipes,
   toast
 });

@@ -1,6 +1,5 @@
 const initialState = {
-  account: {},
-  accounts: [],
+  recipes: [],
   toast: []
 };
 

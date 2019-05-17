@@ -40,8 +40,8 @@ class BaseController {
          error.httpStatusCode = 400;
          return next(err);
       }
-      let modelId = req.params.id;
-      await this.Model.findOneAndDelete(modelId);
+      let filter = { _id: req.params.id };
+      await this.Model.findOneAndDelete(filter);
       res.status(204).end();
    }
 
@@ -52,10 +52,10 @@ class BaseController {
          return next(err);
       }
       let body = req.body;
-      let modelId = req.params.id;
+      let filter = { _id: req.params.id };
       let update = { $set: body };
       let options = { new: true };
-      let model = await this.Model.findOneAndUpdate(modelId, update, options);
+      let model = await this.Model.findOneAndUpdate(filter, update, options);
       res.send(model);
    }
 }
