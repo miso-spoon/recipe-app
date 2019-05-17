@@ -5,6 +5,7 @@ import { withCookies } from "react-cookie";
 
 /* Components */
 import Header from "./Components/Header/header";
+import Input from "./Components/Inputs/Input/input";
 import RecipeListView from "./Components/RevipeListView/recipe-list-view";
 import SideBar from "./Components/SideBar/side-bar";
 
@@ -21,13 +22,26 @@ class AppComponent extends Component {
         />
         <div className="content">
           <Route
+            exact
             path="/"
             render={() => <SideBar cookies={this.props.cookies} />}
           />
           <Route
-            excact
+            exact
             path="/"
             render={() => <RecipeListView cookies={this.props.cookies} />}
+          />
+          <Route
+            excact
+            path="/input"
+            render={() => {
+              return (
+                <div className="input-container">
+                  <Input type="text" header="Username" />
+                  <Input type="password" header="Password" />
+                </div>
+              );
+            }}
           />
         </div>
       </div>

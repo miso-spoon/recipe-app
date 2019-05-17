@@ -2,15 +2,17 @@
 @import '../../styles/responsive';
 
 .recipe-card {
-    width: calc(100% - 20px);
+    width: 100;
+    max-width: 480px;
+    min-width: 400px;
     height: 400px;
     margin: 10px 5px 0px 5px;
-    background: $white;
+    background: $color-white;
     border-radius: 2px;
-    border: 1px solid $gray-4;
+    border: 1px solid $color-border;
 
     @include respond-to(gt-xs) {
-       width: calc(50% - 20px);
+       width: 50%;
     }
 
     &--image-container {
@@ -18,7 +20,7 @@
         justify-content: center;
         align-items: center;
         height: 250px;
-        background: $gray-3;
+        background: $color-gray-medium;
     }
 
     &--image-placeholder {
@@ -29,7 +31,7 @@
         max-width: 42px;
         max-height: 42px;
         font-size: 42px;
-        color: $gray-2;
+        color: $color-gray-dark;
     }
 
     &--detail-container {
