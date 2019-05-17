@@ -24,8 +24,12 @@ class RecipeCard extends Component {
           <div className="recipe-card--time-container">
             <i className="material-icons recipe-card--icon">access_time</i>
             <i className="material-icons recipe-card--icon">scatter_plot</i>
-            <i className="material-icons recipe-card--icon">donut_small</i>
-            <i className="material-icons recipe-card--icon">attach_money</i>
+            <i className="material-icons-round recipe-card--icon">
+              donut_small
+            </i>
+            <i className="material-icons-round recipe-card--icon">
+              attach_money
+            </i>
           </div>
         </div>
       </div>
