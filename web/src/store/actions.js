@@ -1,16 +1,8 @@
-export const ACCOUNT_ACTION = "AccountAction";
-export const ALL_ACCOUNTS_ACTION = "AllAccountsAction";
+export const UPDATE_RECIPES_ACTION = "UpdateRecipesAction";
 
-export function updateAccount(account) {
+export function updateRecipes(recipes) {
   return {
-    type: ACCOUNT_ACTION,
-    payload: account
-  };
-}
-
-export function updateAccounts(accounts) {
-  return {
-    type: ALL_ACCOUNTS_ACTION,
-    payload: accounts
+    type: UPDATE_RECIPES_ACTION,
+    payload: recipes
   };
 }

@@ -37,7 +37,9 @@ class AppComponent extends Component {
             render={() => {
               return (
                 <div className="input-container">
-                  <Input type="text" header="Username" />
+                  <Input type="text" header="First Name" />
+                  <Input type="text" header="Last Name" />
+                  <Input type="text" header="email" />
                   <Input type="password" header="Password" />
                 </div>
               );

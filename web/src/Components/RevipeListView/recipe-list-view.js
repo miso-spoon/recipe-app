@@ -1,35 +1,46 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { updateRecipes } from "../../store/actions";
 
 /* Components */
 import RecipeCard from "../RecipeCard/recipe-card";
+
+/* Services */
+import RecipeService from "../../Services/RecipeService/recipe-service";
 
 /* Styles */
 import "./_recipe-list-view.scss";
 
 class RecipeListView extends Component {
+  componentDidMount() {
+    this.getRecipes(this.props.options);
+  }
+  getRecipes = async options => {
+    let recipes = await RecipeService.get(options);
+    this.props.updateRecipes(recipes);
+  };
+
   render() {
-    return (
-      <div className="recipe-list-view">
-        <RecipeCard title={"Smoked Salmon and Rice"}/>
-        <RecipeCard title={"Macaroni and Cheese"}/>
-        <RecipeCard title={"Peanut Butter and Jelly Sandwich"}/>
-        <RecipeCard title={"Chicken Pot Pie"}/>
-        <RecipeCard title={"Vegitable Stir Fry"}/>
-        <RecipeCard title={"Beef Stew"}/>
-      </div>
-    );
+    let recipeCards = this.props.recipes.map(r => {
+      return <RecipeCard key={r._id} title={r.title} />;
+    });
+
+    return <div className="recipe-list-view">{recipeCards}</div>;
   }
 }
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    state: state,
+    recipes: state.recipes,
     cookies: ownProps.cookies
   };
 };
 
+const mapDispatchToProps = dispatch => ({
+  updateRecipes: recipes => dispatch(updateRecipes(recipes))
+});
+
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(RecipeListView);

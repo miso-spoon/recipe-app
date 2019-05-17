@@ -7,6 +7,9 @@ const log = require('./utils/logging').logger;
 
 const routes = require('./routes');
 
+/* Middleware */
+const headers = require('./middleware/headers');
+
 mongoose.connect('mongodb://localhost:27017/recipeDev', {
    useNewUrlParser: true
 });
@@ -24,6 +27,8 @@ mongoose.connection.on('error', err => {
 app.listen(3000, () => {
    log.info('Server running on port 3000');
 });
+
+app.use(headers);
 
 let morganLogStyle =
    ':method :url :status :response-time ms - :res[content-length]';
