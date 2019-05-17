@@ -12,7 +12,7 @@
     }
 
     &--field {
-        height: 20px;
+        height: 16px;
         width: 180px;
         padding: 12px;
         border-radius: 2px;
@@ -23,7 +23,8 @@
         color: $color-gray-dark;
 
         &:focus {
-            outline: 1px solid $color-border;
+            outline: none;
+            box-shadow: 0 0 0 1pt $color-border;
             background: $color-white;
         }
     }
