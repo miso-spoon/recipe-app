@@ -4,7 +4,6 @@
 .recipe-card {
     width: 100%;
     max-width: 500px;
-    min-width: 400px;
     height: 400px;
     margin: 10px 5px 0px 5px;
     background: $color-white;
@@ -13,6 +12,7 @@
 
     @include respond-to(gt-xs) {
        width: calc(50% - 20px);
+       min-width: 400px;
     }
 
     &--image-container {
@@ -49,16 +49,25 @@
 
     &--info-container {
         display: flex;
-        margin-left: auto;
+        width: 100%;
+        margin: 4px 0 0 auto;
+
+        @include respond-to(gt-sm) {
+            width: unset;
+            margin: 0 0 0 auto;
+        }
     }
 
     &--item-container {
         display: flex;
         align-items: center;
         margin: 0px 4px;
+        color: $color-gray-dark;
+        font-size: 16px;
     }
 
     &--icon {
+        color: $color-black;
         margin: 0 4px;
         height: 20px;
         width: 20px;
