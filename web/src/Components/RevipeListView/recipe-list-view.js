@@ -22,7 +22,7 @@ class RecipeListView extends Component {
 
   render() {
     let recipeCards = this.props.recipes.map(r => {
-      return <RecipeCard key={r._id} title={r.title} />;
+      return <RecipeCard key={r._id} recipe={r} />;
     });
 
     return <div className="recipe-list-view">{recipeCards}</div>;
