@@ -7,7 +7,7 @@ let schemaOptions = {
 let recipeSchema = new mongoose.Schema(
    {
       title: { type: String, required: true },
-      cookTime: { type: String },
+      cook_time: { type: String },
       difficulty: { type: String },
       servings: { type: String },
       calories: { type: String },
