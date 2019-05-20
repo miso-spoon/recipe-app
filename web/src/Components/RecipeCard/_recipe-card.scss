@@ -49,13 +49,7 @@
 
     &--info-container {
         display: flex;
-        width: 100%;
-        margin: 4px 0 0 auto;
-
-        @include respond-to(gt-sm) {
-            width: unset;
-            margin: 0 0 0 auto;
-        }
+        margin-left: auto;
     }
 
     &--item-container {
