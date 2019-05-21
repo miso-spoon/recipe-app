@@ -32,13 +32,13 @@ class RecipeCard extends Component {
               <i className="material-icons recipe-card__icon">scatter_plot</i>
               {recipe.calories}
             </div>
-            <div className="recipe-card__item-container">
+            <div className="recipe-card__item-container hide-xs">
               <i className="material-icons-round recipe-card__icon">
                 donut_small
               </i>
               {recipe.servings}
             </div>
-            <div className="recipe-card__item-container">
+            <div className="recipe-card__item-container hide-xs">
               <i className="material-icons-round recipe-card__icon">
                 attach_money
               </i>
