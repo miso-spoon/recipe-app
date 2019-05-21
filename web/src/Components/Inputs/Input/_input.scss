@@ -3,7 +3,7 @@
 .input {
     margin: 4px;
 
-    &--header {
+    &__header {
         padding: 4px 2px;
         font-weight: 700;
         font-size: 12px;
@@ -11,7 +11,7 @@
         color: $color-gray-dark;
     }
 
-    &--field {
+    &__field {
         height: 16px;
         width: 320px;
         padding: 12px;

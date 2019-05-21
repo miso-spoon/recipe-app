@@ -9,9 +9,9 @@ export default class InputComponent extends Component {
 
     return (
       <div className="input">
-        <div className="input--header">{header}</div>
+        <div className="input__header">{header}</div>
         <input
-          className="input--field"
+          className="input__field"
           type={type}
           placeholder={placeholder}
           onChange={onChange}

@@ -9,7 +9,7 @@
   align-items: center;
   background: $color-primary;
 
-  &--link {
+  &__link {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -37,7 +37,7 @@
 
   }
 
-  &--icon {
+  &__icon {
     background: lighten($color-primary, 25%);
     border-radius: 50%;
     font-size: 32px;

@@ -27,14 +27,14 @@ class CheckBox extends Component {
   getCheckBox() {
     let box = this.state.value ? "check_box" : "check_box_outline_blank";
 
-    return <i className="check-box--box material-icons-round">{box}</i>;
+    return <i className="check-box__box material-icons-round">{box}</i>;
   }
 
   render() {
     return (
       <div className="check-box no-select" onMouseDown={this.handleOnClick}>
         {this.getCheckBox()}
-        <span className="check-box--filter">{this.props.filter}</span>
+        <span className="check-box__filter">{this.props.filter}</span>
       </div>
     );
   }

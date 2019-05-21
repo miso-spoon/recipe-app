@@ -44,11 +44,11 @@ class SideBar extends Component {
       return (
         <div
           key={filter.type + "-container"}
-          className="side-bar--filter-group"
+          className="side-bar__filter-group"
         >
           <div
             key={filter.type + "-header"}
-            className="side-bar--filter-group-header"
+            className="side-bar__filter-group-header"
           >
             {filter.type}
           </div>
@@ -69,9 +69,9 @@ class SideBar extends Component {
           <i className="material-icons">search</i>
         </div>
         <div className="side-bar-content">
-          <div className="side-bar--filter-group">{this.getFilters()}</div>
-          <div className="side-bar--filter-group">
-            <div className="side-bar--filter-group-header">Rating</div>
+          <div className="side-bar__filter-group">{this.getFilters()}</div>
+          <div className="side-bar__filter-group">
+            <div className="side-bar__filter-group-header">Rating</div>
             <ReviewStars rating={0} />
           </div>
         </div>
