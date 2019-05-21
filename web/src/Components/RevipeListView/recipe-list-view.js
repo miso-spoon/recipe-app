@@ -15,13 +15,15 @@ class RecipeListView extends Component {
   componentDidMount() {
     this.getRecipes(this.props.options);
   }
+
   getRecipes = async options => {
     let recipes = await RecipeService.get(options);
     this.props.updateRecipes(recipes);
   };
 
   render() {
-    let recipeCards = this.props.recipes.map(r => {
+    const { recipes } = this.props;
+    let recipeCards = recipes.map(r => {
       return <RecipeCard key={r._id} recipe={r} />;
     });
 
