@@ -33,3 +33,19 @@
   user-select: none; /* Standard syntax */
   -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
 }
+
+.hide-xs {
+  display: none;
+
+  @include respond-to(gt-xs) {
+    display: flex;
+  }
+}
+
+.hide-sm {
+  display: none;
+
+  @include respond-to(gt-sm) {
+    display: flex;
+  }
+}

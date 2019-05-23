@@ -3,9 +3,9 @@ import * as Actions from "./actions";
 
 const recipes = (state = [], action) => {
   switch (action.type) {
-    case Actions.UPDATE_RECIPES_ACTION:
+    case Actions.GET_ALL_RECIPES_ACTION:
       let recipes = action.payload;
-      return state.concat(recipes);
+      return [].concat(recipes);
     default:
       return state;
   }

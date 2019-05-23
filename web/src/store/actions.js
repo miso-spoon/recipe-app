@@ -1,8 +1,8 @@
-export const UPDATE_RECIPES_ACTION = "UpdateRecipesAction";
+export const GET_ALL_RECIPES_ACTION = "GetAllRecipesAction";
 
 export function updateRecipes(recipes) {
   return {
-    type: UPDATE_RECIPES_ACTION,
+    type: GET_ALL_RECIPES_ACTION,
     payload: recipes
   };
 }

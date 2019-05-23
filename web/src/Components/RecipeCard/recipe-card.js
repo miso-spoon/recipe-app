@@ -9,27 +9,41 @@ import "./_recipe-card.scss";
 
 class RecipeCard extends Component {
   render() {
+    const { recipe } = this.props;
+
     return (
       <div className="recipe-card">
-        <div className="recipe-card--image-container">
-          <i className="material-icons recipe-card--image-placeholder">
+        <div className="recipe-card__image-container">
+          <i className="material-icons recipe-card__image-placeholder">
             image_outline
           </i>
         </div>
-        <div className="recipe-card--detail-container">
-          <div className="recipe-card--title">{this.props.title}</div>
-          <div className="recipe-card--review-container">
+        <div className="recipe-card__detail-container">
+          <div className="recipe-card__title">{recipe.title}</div>
+          <div className="recipe-card__review-container">
             <ReviewStars rating={4.5} ratings={234} />
           </div>
-          <div className="recipe-card--time-container">
-            <i className="material-icons recipe-card--icon">access_time</i>
-            <i className="material-icons recipe-card--icon">scatter_plot</i>
-            <i className="material-icons-round recipe-card--icon">
-              donut_small
-            </i>
-            <i className="material-icons-round recipe-card--icon">
-              attach_money
-            </i>
+          <div className="recipe-card__info-container">
+            <div className="recipe-card__item-container">
+              <i className="material-icons recipe-card__icon">access_time</i>
+              {recipe.cook_time}
+            </div>
+            <div className="recipe-card__item-container">
+              <i className="material-icons recipe-card__icon">scatter_plot</i>
+              {recipe.calories}
+            </div>
+            <div className="recipe-card__item-container hide-xs">
+              <i className="material-icons-round recipe-card__icon">
+                donut_small
+              </i>
+              {recipe.servings}
+            </div>
+            <div className="recipe-card__item-container hide-xs">
+              <i className="material-icons-round recipe-card__icon">
+                attach_money
+              </i>
+              {recipe.cost}
+            </div>
           </div>
         </div>
       </div>

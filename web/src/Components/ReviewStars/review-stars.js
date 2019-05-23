@@ -103,7 +103,7 @@ class ReviewStars extends Component {
     return (
       <div className="review-stars no-select" onMouseLeave={this.onLeave}>
         {this.getStars(this.state.rating)}
-        <span className="review-stars--number">{this.state.ratings}</span>
+        <span className="review-stars__number">{this.state.ratings}</span>
       </div>
     );
   }

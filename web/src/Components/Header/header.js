@@ -9,15 +9,15 @@ class Header extends Component {
   render() {
     return (
       <div className="header">
-        <Link to="/" className="header--link no-select">
-          <i className="material-icons-round header--link-icon">restaurant</i>
-          <div className="header--link-title" />
+        <Link to="/" className="header__link no-select">
+          <i className="material-icons-round header__link-icon">restaurant</i>
+          <div className="header__link-title" />
         </Link>
-        <Link to="/input" className="header--link no-select">
-          <i className="material-icons header--link-icon no-select">hot_tub</i>
-          <div className="header--link-title" />
+        <Link to="/input" className="header__link no-select">
+          <i className="material-icons header__link-icon no-select">hot_tub</i>
+          <div className="header__link-title" />
         </Link>
-        <div className="header--icon" />
+        <div className="header__icon" />
       </div>
     );
   }
