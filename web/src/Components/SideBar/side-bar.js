@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 
 /* Components */
 import CheckBox from "../Inputs/CheckBox/check-box";
+import Input from "../Inputs/Input/input";
 import ReviewStars from "../ReviewStars/review-stars";
 
 /* Styles */
@@ -64,10 +65,12 @@ class SideBar extends Component {
     return (
       <div className="side-bar">
         {/* PLACEHOLDER SEARCH */}
-        <div className="side-bar-search">
-          <input type="text" className="side-bar-search-input" />
-          <i className="material-icons">search</i>
-        </div>
+        <Input
+          className="side-bar__search"
+          type="text"
+          placeholder="Search..."
+          icon="search"
+        />
         <div className="side-bar-content">
           <div className="side-bar__filter-group">{this.getFilters()}</div>
           <div className="side-bar__filter-group">

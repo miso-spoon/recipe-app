@@ -5,10 +5,11 @@ import "./_input.scss";
 
 export default class InputComponent extends Component {
   render() {
-    const { header, type, placeholder, onChange } = this.props;
+    const { header, type, placeholder, onChange, icon } = this.props;
+    const className = this.props.className || "";
 
     return (
-      <div className="input">
+      <div className={"input " + className}>
         <div className="input__header">{header}</div>
         <input
           className="input__field"
@@ -16,6 +17,7 @@ export default class InputComponent extends Component {
           placeholder={placeholder}
           onChange={onChange}
         />
+        <i className="material-icons input__icon">{icon}</i>
       </div>
     );
   }

@@ -1,6 +1,7 @@
 @import '../../../styles/colors';
 
 .input {
+    position: relative;
     margin: 4px;
 
     &__header {
@@ -15,6 +16,7 @@
         height: 16px;
         width: 320px;
         padding: 12px;
+        text-overflow: ellipsis;
         border-radius: 2px;
         background: $color-input;
         border: none;
@@ -24,8 +26,15 @@
 
         &:focus {
             outline: none;
-            box-shadow: 0 0 0 1pt $color-border;
+            box-shadow: 0 0 0 1px $color-purple-border;
             background: $color-white;
         }
+    }
+
+    &__icon {
+        position: absolute;
+        top: 16px;
+        right: 2px;
+        color: $color-gray-dark;
     }
 }
