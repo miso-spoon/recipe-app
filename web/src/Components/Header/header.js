@@ -18,6 +18,9 @@ class Header extends Component {
           <div className="header__link-title" />
         </Link>
         <div className="header__icon" />
+        <i className="material-icons header__icon__drop-down">
+          arrow_drop_down
+        </i>
       </div>
     );
   }

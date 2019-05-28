@@ -27,7 +27,12 @@ class RecipeListView extends Component {
       return <RecipeCard key={r._id} recipe={r} />;
     });
 
-    return <div className="recipe-list-view">{recipeCards}</div>;
+    return (
+      <div className="recipe-list-view">
+        <i className="material-icons recipe-list-view__filters">tune</i>
+        {recipeCards}
+      </div>
+    );
   }
 }
 
